@@ -15,6 +15,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { TvComponent } from './tv/tv.component';
 import { PeopleComponent } from './people/people.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PeopleComponent } from './people/people.component';
     ContactsComponent,
     HomeComponent,
     TvComponent,
-    PeopleComponent
+    PeopleComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

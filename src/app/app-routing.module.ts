@@ -13,6 +13,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'gallery', component: GalleryComponent},
   {path: 'details', component: MovieDetailsComponent},
