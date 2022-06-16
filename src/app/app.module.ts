@@ -12,6 +12,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { AboutComponent } from './about/about.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     GalleryComponent,
     AboutComponent,
     MovieDetailsComponent,
-    ContactsComponent
+    ContactsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
