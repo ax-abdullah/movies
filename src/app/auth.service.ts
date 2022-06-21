@@ -5,9 +5,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  BASE_URL:string= 'https://route-egypt-api.herokuapp.com/signup';
+  BASE_URL:string= 'https://route-egypt-api.herokuapp.com/';
   constructor(private _HttpClient: HttpClient) { }
   register(data: object):Observable<any>{
-    return this._HttpClient.post(this.BASE_URL, data)
+    return this._HttpClient.post(`${this.BASE_URL}signup`, data);
+  }
+  login(data: object): Observable<any>{
+    return this._HttpClient.post(`${this.BASE_URL}signin`, data);
   }
 }
