@@ -5,18 +5,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
 import { LoginComponent } from './login/login.component';
 import { MoviesComponent } from './movies/movies.component';
 import { RegisterComponent } from './register/register.component';
+
 import { NotfoundComponent } from './notfound/notfound.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { AboutComponent } from './about/about.component';
+
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
+
 import { TvComponent } from './tv/tv.component';
 import { PeopleComponent } from './people/people.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,8 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
