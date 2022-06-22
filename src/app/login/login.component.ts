@@ -1,3 +1,4 @@
+import jwtDecode from 'jwt-decode';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -23,7 +24,12 @@ export class LoginComponent implements OnInit {
     this._AuthService.login(form.value).subscribe((response)=>{
       console.log(response);
       this.error = response;
-      this._Router.navigate(['/home'])
+
+      // using local storage to store user data
+      if(!(this.error.message == 'success')) return;
+      localStorage.setItem('userData', response.token);
+      this._Router.navigate(['/home']);
+      this._AuthService.setUserData()
   })
   }
 }

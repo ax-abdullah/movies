@@ -1,15 +1,42 @@
 <h2>Login</h2>
 <div class="row justify-content-center">
   <form (ngSubmit)="submitLogin(form)" [formGroup]="form" class="col-12 col-lg-6 col-md-10 col-sm-11">
-    <div class="input_container">
+    <div class="input_container mb-3">
       <label for="email">Email</label>
-      <input type="email" formControlName ="email" name="email" id="email" class="form-control" />
+      <input [ngStyle]="{'border-bottom':
+      (form.get('email')?.errors
+      && form.get('email')?.touched ) ?
+      '3px solid rgb(191 2 19)' : 'none',
+      'border-radius':
+      (form.get('email')?.errors?.['required']
+      && form.get('email')?.touched ) ?
+      '5px 5px 0 0  ' : '5px'}"
+      type="email"
+      formControlName ="email"
+      name="email" id="email"
+      class="form-control" />
+      <!-- <div class="alert alert-danger py-1" *ngIf="form.get('email')?.errors && form.get('email')?.touched ">Email is required</div> -->
     </div>
     <div class="input_container">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" formControlName="password" class="form-control" />
+      <input [ngStyle]="{'border-bottom':
+        (form.get('password')?.errors
+        && form.get('password')?.touched )
+        ? '3px solid rgb(191 2 19)' : 'none'
+        , 'border-radius': (form.get('password')?.errors?.['required']
+        && form.get('password')?.touched ) ? '5px 5px 0 0  ' : '5px'}"
+        type="password"
+        name="password"
+        id="password"
+        formControlName="password"
+        class="form-control" />
+      <!-- <div class="alert alert-danger py-1" *ngIf="form.get('password')?.errors && form.get('password')?.touched ">Password is required</div> -->
     </div>
 
+    <div class="alert alert-danger py-1" *ngIf="error.message && error.message != 'success'">
+      <!-- Incorrect username or password -->
+      {{error.message}}
+    </div>
     <button type="submit" class="btn btn-info mt-3">Login</button>
   </form>
 </div>
