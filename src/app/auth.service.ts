@@ -9,7 +9,9 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export class AuthService {
   BASE_URL:string= 'https://route-egypt-api.herokuapp.com/';
   userData= new BehaviorSubject(null);
-  constructor(private _HttpClient: HttpClient, private _Router: Router) { }
+  constructor(private _HttpClient: HttpClient, private _Router: Router) {
+    if(localStorage.getItem('userData') != null) this.setUserData()
+   }
   register(data: object):Observable<any>{
     return this._HttpClient.post(`${this.BASE_URL}signup`, data);
   }
