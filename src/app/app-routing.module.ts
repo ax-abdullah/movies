@@ -11,19 +11,20 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'gallery', component: GalleryComponent},
-  {path: 'details', component: MovieDetailsComponent},
-  {path: 'movies', component: MoviesComponent},
-  {path: 'contacts', component: ContactsComponent},
+  {path: '', canActivate: [AuthGuard], component: HomeComponent},
+  {path: 'home', canActivate: [AuthGuard], component: HomeComponent},
+  {path: 'gallery', canActivate: [AuthGuard], component: GalleryComponent},
+  {path: 'details', canActivate: [AuthGuard], component: MovieDetailsComponent},
+  {path: 'movies', canActivate: [AuthGuard], component: MoviesComponent},
+  {path: 'contacts', canActivate: [AuthGuard], component: ContactsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'tv', component: TvComponent},
-  {path: 'people', component: PeopleComponent},
+  {path: 'about', canActivate: [AuthGuard], component: AboutComponent},
+  {path: 'tv', canActivate: [AuthGuard], component: TvComponent},
+  {path: 'people', canActivate: [AuthGuard], component: PeopleComponent},
   {path: '**', component: NotfoundComponent},
 ];
 
