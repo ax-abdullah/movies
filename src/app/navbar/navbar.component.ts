@@ -8,11 +8,10 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  isLoggedIn:boolean = false
+  isLoggedIn:boolean = false;
   constructor(private _AuthService: AuthService, private _Router: Router) { }
 
   ngOnInit(): void {
-
       this._AuthService.userData.subscribe(() =>{
         if(this._AuthService.userData.getValue() != null){
           this.isLoggedIn = true;
