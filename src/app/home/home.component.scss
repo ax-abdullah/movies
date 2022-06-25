@@ -1,0 +1,24 @@
+.title{
+  position: relative;
+  height: fit-content;
+  &::after{
+    content: '';
+    border: .5px solid #a8a8a83d;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::before{
+    content: "";
+    border: 1px solid #a8a8a83d;
+    width: 97%;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+
+  }
+  &_para{
+    color: #949cb0;
+  }
+}

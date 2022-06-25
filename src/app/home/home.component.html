@@ -1,1 +1,40 @@
-<p>home works!</p>
+<div class="row mb-5 py-4">
+  <div class="col-md-4 py-4 px-0 title">
+    <h3 class="h2 w-50">Trending movies to watch now</h3>
+    <p class="mb-0 text-muted">most watched movies by days</p>
+  </div>
+  <div *ngFor="let movie of trendingMovies" class="col-md-2">
+    <div class="movie position-relative">
+    <img [src]="imgPrefix+movie?.poster_path" class="w-100" [alt]="movie.title">
+    <h3 class="h6 fw-bolder my-3">{{movie.title}}</h3>
+    <div class="vote p-2 fw-bolder position-absolute light-colors top-0 end-0" *ngIf="!(movie.vote_average < 1)" >{{movie.vote_average | number: '1.0-1'}}</div>
+    </div>
+  </div>
+</div>
+
+<div class="row  mb-5 py-4">
+  <div class="col-md-4 py-4 px-0 title">
+    <h3 class="mb-3 h2 w-50">Trending shows to watch now</h3>
+    <p class="mb-0 text-muted">most watched tv shows by days</p>
+  </div>
+  <div *ngFor="let tv of trendingTv" class="col-md-2">
+    <div class="movie position-relative">
+    <img [src]="imgPrefix+tv?.poster_path" class="w-100" [alt]="tv.name">
+    <h3 class="h6 fw-bolder my-3">{{tv.name}}</h3>
+    <div class="vote p-2 fw-bolder position-absolute light-colors top-0 end-0" *ngIf="!(tv.vote_average < 1)" >{{tv.vote_average | number: '1.0-1'}}</div>
+    </div>
+  </div>
+
+  <div class="row  mb-5 py-4">
+    <div class="col-md-4 py-4 px-0 title">
+      <h3 class="mb-3 h2 w-50">Trending People</h3>
+      <p class="mb-0 text-muted">most trending people by days</p>
+    </div>
+    <div *ngFor="let people of trendingPeople" class="col-md-2">
+      <div class="movie position-relative">
+      <img [src]="imgPrefix+people?.profile_path" class="w-100" [alt]="people.title">
+      <h3 class="h6 fw-bolder my-3">{{people.name}}</h3>
+      <div class="vote p-2 fw-bolder position-absolute light-colors top-0 end-0" *ngIf="!(people.popularity < 1)" >{{people.popularity | number: '1.0-1'}}</div>
+      </div>
+    </div>
+
