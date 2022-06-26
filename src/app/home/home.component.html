@@ -5,9 +5,11 @@
   </div>
   <div *ngFor="let movie of trendingMovies" class="col-md-2">
     <div class="movie position-relative">
-    <img [src]="imgPrefix+movie?.poster_path" class="w-100" [alt]="movie.title">
-    <h3 class="h6 fw-bolder my-3">{{movie.title}}</h3>
-    <div class="vote p-2 fw-bolder position-absolute light-colors top-0 end-0" *ngIf="!(movie.vote_average < 1)" >{{movie.vote_average | number: '1.0-1'}}</div>
+      <a [routerLink]="['/details', movie.id]" class="text-secondary ">
+        <img [src]="imgPrefix+movie?.poster_path" class="w-100" [alt]="movie.title" (click)="getId(movie)">
+        <h3 class="h6 fw-bolder my-3">{{movie.title}}</h3>
+        <div class="vote p-2 fw-bolder position-absolute light-colors top-0 end-0" *ngIf="!(movie.vote_average < 1)" >{{movie.vote_average | number: '1.0-1'}}</div>
+      </a>
     </div>
   </div>
 </div>

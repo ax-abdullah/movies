@@ -1,0 +1,29 @@
+.title {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.title::after {
+  content: '';
+  border: .5px solid #a8a8a83d;
+  width: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.title::before {
+  content: "";
+  border: 1px solid #a8a8a83d;
+  width: 97%;
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+}
+
+.title_para {
+  color: #949cb0;
+}
+/*# sourceMappingURL=home.component.css.map */

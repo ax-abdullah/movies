@@ -27,5 +27,13 @@ export class HomeComponent implements OnInit {
       console.log(this.trendingPeople);
     })
   }
+  getId(movie:any):any{
+    return this.trendingMovies.filter(el => {
+      if(el.id == movie.id) {
+        console.log(el);
+        return el
+      }
+    });
+  }
 
 }

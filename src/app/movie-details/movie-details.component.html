@@ -1,1 +1,9 @@
-<p>movie-details works!</p>
+<div class="row">
+  <div class="col-md-3">
+    <img class="w-100" [src]="imgPrefix+details.poster_path" alt="">
+  </div>
+  <div class="col-md-9">
+    <h2 class="fw-border">{{details.title}}</h2>
+    <p class="text-muted p-2">{{details.overview}}</p>
+  </div>
+</div>

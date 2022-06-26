@@ -15,4 +15,7 @@ export class MoviesService {
   getTrending(mediaType:string):Observable<any> {
     return this._HttpClient.get(`${this.URL}/trending/${mediaType}/week?api_key=${this.KEY}`)
   }
+  getMovieDetails(id:number):Observable<any>{
+    return this._HttpClient.get(`${this.URL}movie/${id}?api_key=${this.KEY}`);
+  }
 }
